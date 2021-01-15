@@ -1,0 +1,15 @@
+@import "styles/variables";
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.appContainer {
+    background-color: $primary-color;
+
+    >p {
+        margin: 0;
+        padding: 0;
+    }
+}
