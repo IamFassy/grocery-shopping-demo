@@ -1,0 +1,17 @@
+@import "../../styles/variables";
+
+
+.shopping-detail-container {
+    &__button {
+        border-top: 1px solid #DEE2E6;
+
+        &-back {
+            background-color: $white;
+            border: 1px solid $primary-color;
+            margin: 10px 0;
+            border-radius: 4px;
+            color: $primary-color;
+            padding: 5px 30px;
+        }
+    }
+}

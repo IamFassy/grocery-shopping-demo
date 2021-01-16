@@ -26,11 +26,12 @@ export default function productReducer(state = INITIAL_STATE, action) {
 
             let items = [...state.productsData]
             let addedItem = items.find(item => item.id === id)
+            //Checking if item exists
             let item_exists = state.cartItems.find(item => id === item.id)
 
             if (item_exists) {
 
-                console.log(item_exists, "state items");
+
                 addedItem.cartQuantity += 1
 
                 return {
@@ -39,6 +40,7 @@ export default function productReducer(state = INITIAL_STATE, action) {
                 }
             }
             else {
+                
 
                 addedItem.cartQuantity = addedItem.cartQuantity + 1;
 

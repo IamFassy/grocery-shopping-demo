@@ -35,8 +35,8 @@ const Header = (props) => {
         <header className="header-container">
             <Row className="header-container__row">
                 <Link to="/">Home</Link>
-                <span>|</span>
-                <Link to="/cart">Cart {props.cartItems.length > 0 && "(" + props.cartItems.length + ")"}</Link>
+                {!props.cart && <span>|</span>}
+                {!props.cart && <Link to="/cart">Cart {props.cartItems.length > 0 && "(" + props.cartItems.length + ")"}</Link>}
             </Row>
         </header>
 

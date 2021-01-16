@@ -7,7 +7,50 @@
         padding-top: 40px;
         background-color: $cart-background;
         min-height: 100vh;
+        width: 100%;
+        overflow-x: hidden;
 
+        &-left {
+            background-color: $white;
+            padding: 20px 15px;
+            margin-top: 20px;
+
+            &-row {
+                margin-left: 0;
+                margin-right: 0;
+                align-items: center;
+                color: $text-color;
+
+                >h4 {
+                    font-weight: 500;
+                }
+
+                >span {
+                    color: $quantity;
+                    padding-left: 5px;
+                    margin-bottom: 0;
+                }
+
+                &-button {
+                    background-color: transparent;
+                    border: none;
+                    color: $cart-clear;
+                    font-weight: 500;
+                }
+
+                &-button:hover {
+                    color: darken($cart-clear, 20%);
+                }
+            }
+
+        }
+
+        &-right {
+            background-color: $white;
+            padding: 20px 15px;
+            margin-top: 20px;
+
+        }
 
     }
 }

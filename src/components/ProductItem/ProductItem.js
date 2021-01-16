@@ -4,16 +4,53 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useDispatch } from 'react-redux';
 import { addToCart, removeFromCart } from '../../reduxcomponents/Actions/ProductActions';
 import { Col, Row } from 'react-bootstrap';
+import NetworkManager from '../../apimanager/NetworkManager';
+import { editCart, httpMethods } from '../../apimanager/Endpoints';
 
 const ProductItem = ({ item }) => {
+
     let dispatch = useDispatch()
 
+
+
     const handleAdd = () => {
-        dispatch(addToCart(item.id))
+        // debounceOnChange
+        let body = {
+            "product_id": item.id,
+            "auth_key": "6c55fa36a2138b23a52e74619bfdae147fa0c3e1",
+            "quantity": item.cartQuantity + 1
+        }
+        changeCart(body, "add")
+    }
+
+    const changeCart = (body, type) => {
+        NetworkManager.request(editCart, httpMethods.post, body)
+            .then((res) => {
+                console.log(res, "res");
+                if (res.status === 200) {
+                    if (type === "remove") {
+                        dispatch(removeFromCart(item.id))
+                    }
+                    else {
+                        dispatch(addToCart(item.id))
+                    }
+
+                }
+            })
+            .catch((err) => {
+                console.log(err, "err");
+            })
     }
 
     const handleRemove = () => {
-        dispatch(removeFromCart(item.id))
+        // debounceOnChange
+        let body = {
+            "product_id": item.id,
+            "auth_key": "6c55fa36a2138b23a52e74619bfdae147fa0c3e1",
+            "quantity": item.cartQuantity - 1
+        }
+        changeCart(body, "remove")
+
     }
 
 
