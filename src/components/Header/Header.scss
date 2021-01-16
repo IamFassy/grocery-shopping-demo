@@ -1,0 +1,31 @@
+ @import "../../styles/variables";
+
+
+
+ .header-container {
+     background-color: $primary-color;
+     position: fixed;
+     width: 100%;
+     top: 0;
+     left: 0;
+     right: 0;
+     z-index: 1;
+
+     &__row {
+         margin-left: 0;
+         justify-content: center;
+         align-items: center;
+         padding: 10px 0;
+         color: $white;
+         font-size: 14px;
+
+         >span {
+             padding: 0 10px;
+         }
+
+         >a {
+             color: $white;
+         }
+
+     }
+ }

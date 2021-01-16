@@ -1,0 +1,77 @@
+@import "../../styles/variables";
+
+
+.product-item-container {
+    margin-top: 50px;
+
+    >img {
+        width: 150px;
+        height: 150px;
+    }
+
+    &__price {
+        font-size: 17px;
+        color: $text-color;
+        font-weight: 500;
+    }
+
+    &__title {
+        @extend .product-item-container__price;
+        font-size: 15px;
+    }
+
+    &__add-button {
+        outline: none;
+        background-color: transparent;
+        border: none;
+        display: flex;
+        padding-left: 0;
+        color: $primary-color;
+        margin-top: 5px;
+
+
+        &-icon {
+            width: 24px;
+            height: 24px;
+            background-color: $primary-color;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 5px;
+        }
+    }
+
+    &__quantity-button {
+        background-color: #ffffff;
+        border: 2px solid $quantity;
+        border-radius: 5px;
+        width: 120px;
+        padding: 5px;
+        border-radius: 20px;
+        color: $quantity;
+        margin-top: 5px;
+
+        align-items: center;
+        display: flex;
+        justify-content: center;
+
+        >span {
+            font-weight: 500;
+        }
+
+        &-count {
+            background-color: transparent;
+            border: none;
+            color: $quantity;
+            outline: none;
+        }
+
+        &-count :hover {
+            text-decoration: none;
+        }
+    }
+
+
+
+}

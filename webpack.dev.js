@@ -9,22 +9,25 @@ module.exports = {
     entry: path.resolve(__dirname, './src/index.js'),
     module: {
         rules: [
-            {
-                test: /\.(scss|css)$/,
-                use: [
-                    'style-loader',
-                    { loader: 'css-loader', options: { sourceMap: true, importLoaders: 1, modules: true } },
-                    { loader: 'postcss-loader', options: { sourceMap: true } },
-                    {
-                        loader: "sass-loader",
-                        options: { sourceMap: true }
-                    },
-                ],
-            },
+
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: ['babel-loader']
+            },
+            {
+                test: /\.(scss|css)$/,
+                // use: [
+                //     'style-loader',
+                //     { loader: 'css-loader', options: { sourceMap: true, importLoaders: 1, modules: true } },
+                //     { loader: 'postcss-loader', options: { sourceMap: true } },
+                //     {
+                //         loader: "sass-loader",
+                //         options: { sourceMap: true }
+                //     },
+                // ],
+                // test: /\.(scss|css)$/,
+                use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
             },
 
         ]
@@ -42,12 +45,15 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, './build'),
         filename: 'bundle.js',
+        publicPath: '/'
+
     },
     devServer: {
         contentBase: path.resolve(__dirname, './build'),
         hot: true,
-
+        historyApiFallback: true
     },
     devtool: 'eval-source-map',
+
 
 };

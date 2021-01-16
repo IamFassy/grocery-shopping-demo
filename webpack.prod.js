@@ -25,7 +25,7 @@ module.exports = {
                         },
                     },
                     'postcss-loader',
-                    'sass-loader',
+                    'sass-loader'
 
                 ],
             },
@@ -64,10 +64,12 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, './build'),
         filename: 'bundle.js',
+        publicPath: '/'
     },
     devServer: {
         contentBase: path.resolve(__dirname, './build'),
         hot: true,
+        historyApiFallback: true
 
     },
 

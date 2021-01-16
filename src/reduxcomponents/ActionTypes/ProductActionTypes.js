@@ -1,0 +1,6 @@
+export const GET_PRODUCTS_DATA = "GET_PRODUCTS_DATA";
+export const GET_TOTAL_PAGES = "GET_TOTAL_PAGES";
+export const ADD_TO_CART = "ADD_TO_CART";
+export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
+export const DELETE_CART = "DELETE_CART";
+export const CART_ITEMS = "CART_ITEMS";

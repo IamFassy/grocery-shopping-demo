@@ -1,0 +1,13 @@
+@import "../../styles/variables";
+
+
+.cart-container {
+
+    &__body {
+        padding-top: 40px;
+        background-color: $cart-background;
+        min-height: 100vh;
+
+
+    }
+}
