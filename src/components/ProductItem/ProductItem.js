@@ -7,6 +7,7 @@ import { Col, Row } from 'react-bootstrap';
 import NetworkManager from '../../apimanager/NetworkManager';
 import { editCart, httpMethods } from '../../apimanager/Endpoints';
 
+
 const ProductItem = ({ item }) => {
 
     let dispatch = useDispatch()
