@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
-import { connect, useDispatch } from 'react-redux';
-import { editCart, httpMethods } from '../../apimanager/Endpoints';
-import NetworkManager from '../../apimanager/NetworkManager';
+import React from 'react';
+import { Col, Row } from 'react-bootstrap';
+import { connect } from 'react-redux';
 import Checkout from '../../components/Checkout/Checkout';
 import Header from '../../components/Header/Header';
 import ShoppingDetail from '../../components/ShoppingDetail/ShoppingDetail';
@@ -12,33 +10,9 @@ import './Cart.scss'
 const Cart = (props) => {
 
 
-    let dispatch = useDispatch()
-
-    const clearCart = () => {
-
-        // let body = []
-        // for (let i = 0; i < props.cartItems.length; i++) {
-        //     let arr = {
-        //         "product_id": props.cartItems[i].id,
-        //         "auth_key": "6c55fa36a2138b23a52e74619bfdae147fa0c3e1",
-        //         "quantity": 0
-        //     }
-        //     body.push(arr)
-        // }
-
-        // NetworkManager.request(editCart, httpMethods.post, body)
-        //     .then((res) => {
-        //         console.log(res, "clear");
-        //     })
-        //     .catch((err) => {
-        //         console.log(err, "err");
-        //     })
-    }
-
-
     return (
         <div className="cart-container">
-            <Header cart={true}  />
+            <Header cart={true} />
             <div className="cart-container__body">
 
                 {props.cartItems.length > 0 && <Row>

@@ -15,7 +15,7 @@ const ProductItem = ({ item }) => {
 
 
     const handleAdd = () => {
-        // debounceOnChange
+
         let body = {
             "product_id": item.id,
             "auth_key": "6c55fa36a2138b23a52e74619bfdae147fa0c3e1",
@@ -44,7 +44,7 @@ const ProductItem = ({ item }) => {
     }
 
     const handleRemove = () => {
-        // debounceOnChange
+
         let body = {
             "product_id": item.id,
             "auth_key": "6c55fa36a2138b23a52e74619bfdae147fa0c3e1",

@@ -29,7 +29,7 @@ const Item = (props) => {
                             }
                         })
                         .catch((err) => {
-
+                            console.log(err, "err");
                         })
                 }
             })

@@ -11,7 +11,6 @@ import { Col, Pagination, Row } from 'react-bootstrap';
 
 const Home = (props) => {
     const [currentPage, setCurrentPage] = useState(1)
-    const [totalPages, setTotalPages] = useState()
     const [loading, setLoading] = useState()
     const [error, setError] = useState()
 
@@ -20,6 +19,8 @@ const Home = (props) => {
     useEffect(() => {
         getData(1)
     }, [])
+
+
 
 
     const getData = (page) => {
@@ -31,6 +32,7 @@ const Home = (props) => {
                     dispatch(getProductData(res.data.products))
                     dispatch(getTotalPages(res.data.total))
                     setError(false)
+
                 }
                 else {
                     setError(true)
@@ -118,7 +120,7 @@ const Home = (props) => {
                         <Row className="home-container__body-product-row">
 
                             {props.productsData.map((item, index) => {
-                                return (<Col lg={3} sm={12} md={3} xl={3} xs={12}>
+                                return (<Col key={index} lg={3} sm={12} md={3} xl={3} xs={12}>
                                     <ProductItem key={index} item={item} />
                                 </Col>
                                 )

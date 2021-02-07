@@ -17,16 +17,6 @@ module.exports = {
             },
             {
                 test: /\.(scss|css)$/,
-                // use: [
-                //     'style-loader',
-                //     { loader: 'css-loader', options: { sourceMap: true, importLoaders: 1, modules: true } },
-                //     { loader: 'postcss-loader', options: { sourceMap: true } },
-                //     {
-                //         loader: "sass-loader",
-                //         options: { sourceMap: true }
-                //     },
-                // ],
-                // test: /\.(scss|css)$/,
                 use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
             },
 

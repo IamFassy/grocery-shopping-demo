@@ -27,10 +27,9 @@ export default function productReducer(state = INITIAL_STATE, action) {
             let items = [...state.productsData]
             let addedItem = items.find(item => item.id === id)
             //Checking if item exists
-            let item_exists = state.cartItems.find(item => id === item.id)
+            let item_exists = state.cartItems.find(item => item.id === id)
 
             if (item_exists) {
-
 
                 addedItem.cartQuantity += 1
 
@@ -40,10 +39,8 @@ export default function productReducer(state = INITIAL_STATE, action) {
                 }
             }
             else {
-                
 
                 addedItem.cartQuantity = addedItem.cartQuantity + 1;
-
                 return {
                     ...state,
                     cartItems: [...state.cartItems, addedItem],
@@ -51,6 +48,7 @@ export default function productReducer(state = INITIAL_STATE, action) {
                 };
             }
         }
+        
         case Action.REMOVE_FROM_CART: {
             let addedItem = state.productsData.find(item => item.id === id)
             //if the quantity == 0 then it should be removed

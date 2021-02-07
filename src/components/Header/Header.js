@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Col, Row } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 import { connect, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getCart, httpMethods } from '../../apimanager/Endpoints';
@@ -17,12 +17,13 @@ const Header = (props) => {
 
 
     const getCartItems = () => {
+
         NetworkManager.request(getCart + "auth_key=6c55fa36a2138b23a52e74619bfdae147fa0c3e1", httpMethods.get)
             .then((res) => {
                 if (res.status === 200) {
                     dispatch(cartItems(res.data))
                 }
-                console.log(res, "res");
+
             })
             .catch((err) => {
                 console.log(err, "err");
